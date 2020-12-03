@@ -21,7 +21,7 @@ rmsnoise=100.0  ; white noise in ppm <br/>
 ### Output:
 
 ts_noisefree.txt: timeseries without noise added <br/>
-ts_noise.txt: timeseries with noise addedm <br/>
+ts_noise.txt: timeseries with noise added <br/>
 psd_noisefree.txt: power density spectrum without noise added <br/>
 psd_noise.txt: power density spectrum without noise added <br/>
 
