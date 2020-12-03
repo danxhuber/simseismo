@@ -3,6 +3,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 @makeprofile.pro
+@smooth_funct.pro
 
 pro main
 
@@ -19,10 +20,10 @@ COMMON RANDOM,seed  	    ; IMPORTANT FOR INDEPENDENT REALIZATIONS!
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; star parameters
-rad=1.0     	; Rsun
+rad=1.0    	; Rsun
 teff=5800.  	; K
-rotperiod=2.	; days
-inclination=45. ; stellar inclination in degrees
+rotperiod=10.	; days
+inclination=90. ; stellar inclination in degrees
 
 ; optional. mass if known (gives more accurate amplitude estimate)
 mass=1.0
@@ -73,7 +74,7 @@ print,'sampling (minutes):',spl
 print,'nyquist (muHz):',nyq
 print,'mode liftime (days):',lifetime
 print,'stellar inclination (degrees):',inclination
-print,'duty cycle (hrs/night):',hrs
+print,'duty cycle (hrs/day):',hrs
 print,'amplitude (ppm):',rvampin
 print,'precision per cadence (ppm):',rmsnoise
 print,'------------------------------------------------------'
@@ -82,7 +83,7 @@ ndata=length*hrs*60./spl
 sn=rvampin/(rmsnoise/sqrt(ndata))
 print,'expected S/N:',sn
 
-rvampin=rvampin+rvampin*0.4
+rvampin=rvampin+rvampin*1.9
 
 rdfloat,'VIRGO_low_profile.dat',xvirg,yvirg,/double
 yvirg = sqrt(yvirg)
