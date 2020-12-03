@@ -1,0 +1,2 @@
+# simseismo
+Simulate asteroseismic oscillations
