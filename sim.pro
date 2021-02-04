@@ -4,6 +4,7 @@
 
 @makeprofile.pro
 @smooth_funct.pro
+@writetofile.pro
 
 pro main
 
